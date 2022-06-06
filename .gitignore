@@ -1,0 +1,27 @@
+.DS_Store
+
+# IDE settings
+# - Goland
+/.idea/
+# - VSCode
+__debug_bin
+
+# binaries
+*.dll
+*.dylib
+*.exe
+*.exe~
+*.so
+
+# test binaries - built with `go test -c`
+*.test
+
+# generated test coverage output
+/coverage.html
+/coverage.out
+
+# local dev env file
+.env
+
+# tmp folder
+.tmp
