@@ -5,6 +5,7 @@
 /.idea/
 # - VSCode
 __debug_bin
+.vscode
 
 # binaries
 *.dll
