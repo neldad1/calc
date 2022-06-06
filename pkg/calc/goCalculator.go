@@ -13,6 +13,7 @@ func initCalc(args []string) *calculator.Cell {
 	for _, a := range args {
 		i, err := strconv.ParseFloat(a, 64)
 		if err != nil {
+			fmt.Println("failed to initialize calculator")
 			return nil
 		}
 		numbers = append(numbers, i)
@@ -25,7 +26,7 @@ func initCalc(args []string) *calculator.Cell {
 func FindMax(args []string) float64 {
 	calc := initCalc(args)
 	if calc == nil {
-		fmt.Println("failed to initialize calculator")
+		return -1
 	}
 	return calc.Max().Register.MaxValue
 }
@@ -33,7 +34,7 @@ func FindMax(args []string) float64 {
 func FindMin(args []string) float64 {
 	calc := initCalc(args)
 	if calc == nil {
-		fmt.Println("failed to initialize calculator")
+		return -1
 	}
 	return calc.Min().Register.MinValue
 }
@@ -41,7 +42,7 @@ func FindMin(args []string) float64 {
 func FindMean(args []string) float64 {
 	calc := initCalc(args)
 	if calc == nil {
-		fmt.Println("failed to initialize calculator")
+		return -1
 	}
 	val := math.Round(calc.Mean().Register.Mean*100) / 100
 	return val
